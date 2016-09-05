@@ -224,33 +224,35 @@ The `head` section is structured as follows:
 * `query_executed`, string, the SQL text of the query executed, complete of pagination information
 * `fields`, array, associative array of field ids (indexes) and field labels (values).
 
-      [
-        "head" => [
-          "query_arrived" => "",
-          "query_encoded" => "",
-          "total_rows" => "",
-          "page" => "",
-          "total_pages" => "",
-          "table" => "",
-          "stripped_table" => "",
-          "no_records_shown" => "",
-          "query_executed" => "",
-          "fields" => [
-            "id" => "Id field",
-            "creator" => "First creator of the record",
-            ...
+#### Example
+
+        [
+          "head" => [
+            "query_arrived" => "",
+            "query_encoded" => "",
+            "total_rows" => "",
+            "page" => "",
+            "total_pages" => "",
+            "table" => "",
+            "stripped_table" => "",
+            "no_records_shown" => "",
+            "query_executed" => "",
+            "fields" => [
+              "id" => "Id field",
+              "creator" => "First creator of the record",
+              ...
+            ]
+          ],
+          "records" => [
+            "corelinks" => [ ... ],
+            "corelinks" => [ ... ],
+            "allPlugins" => [ ... ],
+            "fullFiles" => [ ... ],
+            "geodata" => [ ... ],
+            "userlinks" => [ ... ],
+            "rs" => [ ... ]
           ]
-        ],
-        "records" => [
-          "corelinks" => [ ... ],
-          "corelinks" => [ ... ],
-          "allPlugins" => [ ... ],
-          "fullFiles" => [ ... ],
-          "geodata" => [ ... ],
-          "userlinks" => [ ... ],
-          "rs" => [ ... ]
         ]
-      ]
 
 ---
 
