@@ -3,7 +3,8 @@
 Two open source clients, written in PHP and in Javascript to interact with a [BraDypUS](https://github.com/jbogdani/BraDypUS) database.
 
 * [PHP Version](#usage-of-the-php-version)
-* [JavaScript version](#usage-of-the-javaScript-version)
+* [JavaScript version](#usage-of-the-javascript-version)
+* [BraDypUS data structure](#braDypUS-data-structure)
 * [MIT license](mit-license)
 
 ---
@@ -77,7 +78,7 @@ return arrays of data
       **You do not have to manully enter the encoded query as third parameter of this method. This can be retrieved from the results of a previously executed query**
 
 
-## Usage of the JavaScript version
+## Usage of the Javascript version
 The methods of javascript version share the same names and usage with the PHP version,
 except that each one accepts as last parameter a callback function that will be executed as soon as the data will be available from the database.
 
@@ -123,8 +124,137 @@ return arrays of data
   * etc..
 
 
+## BraDypUS data structure
 
-### MIT license
+The API returns arrays of two different types, one for the single record and one for the list of records.
+
+### Single record
+
+The single record structure is returned only by the `getOne` method. The main array is composed by:
+
+* `fields`: associative array of field ids (indexes) and field labels (values), eg:
+      "fields" => [
+        "id" => "Id field",
+        "creator" => "First creator of the record",
+        ...
+      ]
+* `core`: associative array of field ids (indexes) and their values (values) of the main table
+      "core" => [
+        "id" => 10,
+        "creator" => 7,
+        ...
+      ]
+* `corelinks`: associative array with automatic links data, for all tables
+      "coreLinks" => [
+        "table1" => [         // Name of the linked table
+          "tot" => 10         // Total number of links in table 1
+          "query" => "{SQL}"  // SQL to retrieve linked records
+        ],
+        "table2" => [ ... ]
+      ]
+* `allPlugins`: array of data from plugins (1-n) tables
+      "allPlugins" => [
+        "plugin1" => [
+          "fld1" => "value1",
+          ...
+        ],
+        "plugin2" => [...]
+      ]
+* `fullFiles`: indexed array with list of attached files
+      "fullFiles" => [
+        [
+          "id" => 245
+          "creator" => 7
+          "ext" => "jpg"
+          "keywords" => ""
+          "description" => ""
+          "printable" => ""
+          "filename" => "C0272_MR2004"
+          "linkid" => 323
+        ],
+        [...]
+      ]
+* `geodata`: indexed array with list of attached geodata
+      "geodata" => [
+        [
+          "id" => "",
+          "table_link" => "",
+          "id_link" => "",
+          "geometry" => "",
+          "geo_el_elips" => "",
+          "geo_el_asl" => ""
+        ],
+        [...]
+      ]
+* `userlinks`: indexed array with links entered manually
+      "userLinks" => [
+        [
+          "id" => "",
+          "tb" => "",
+          "ref_id" => ""
+        ],
+        [...]
+      ]
+* `rs`: indexed array with stratigraphic relationship      
+      "rs" => [
+        [
+          "id" => "",
+          "tb" => "",
+          "first" => "",
+          "second" => "",
+          "relation" => ""
+        ],
+        [ ... ]
+      ]
+
+### List of records
+
+The list record structure is returned by all other methods other then `getOne`.
+The main array is composed by two parts, the `head` section and the `records` section.
+The `records` section is an indexed array of record arrays, as described above.
+The `head` section is structured as follows:
+* `query_arrived`, string, full SQL text of the query
+* `query_encoded`, string, base64 encoded full text of the query
+* `total_rows`, int, total of records found by the query
+* `page`, int, current page of results
+* `total_pages`, int, total number of pages found by the query
+* `table`, string, full name of the reference table
+* `stripped_table`, string, short name of the referenced table, stripped of application name
+* `no_records_shown`, int, total number of records shown in current page
+* `query_executed`, string, the SQL text of the query executed, complete of pagination information
+* `fields`, array, associative array of field ids (indexes) and field labels (values).
+
+      [
+        "head" => [
+          "query_arrived" => "",
+          "query_encoded" => "",
+          "total_rows" => "",
+          "page" => "",
+          "total_pages" => "",
+          "table" => "",
+          "stripped_table" => "",
+          "no_records_shown" => "",
+          "query_executed" => "",
+          "fields" => [
+            "id" => "Id field",
+            "creator" => "First creator of the record",
+            ...
+          ]
+        ],
+        "records" => [
+          "corelinks" => [ ... ],
+          "corelinks" => [ ... ],
+          "allPlugins" => [ ... ],
+          "fullFiles" => [ ... ],
+          "geodata" => [ ... ],
+          "userlinks" => [ ... ],
+          "rs" => [ ... ]
+        ]
+      ]
+
+---
+
+## MIT license
 
 The MIT License (MIT)
 Copyright (c) 2016 Julian Bogdani (BraDypUS)
