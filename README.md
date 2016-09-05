@@ -133,79 +133,79 @@ The API returns arrays of two different types, one for the single record and one
 The single record structure is returned only by the `getOne` method. The main array is composed by:
 
 * `fields`: associative array of field ids (indexes) and field labels (values), eg:
-      "fields" => [
-        "id" => "Id field",
-        "creator" => "First creator of the record",
-        ...
-      ]
-* `core`: associative array of field ids (indexes) and their values (values) of the main table
-      "core" => [
-        "id" => 10,
-        "creator" => 7,
-        ...
-      ]
-* `corelinks`: associative array with automatic links data, for all tables
-      "coreLinks" => [
-        "table1" => [         // Name of the linked table
-          "tot" => 10         // Total number of links in table 1
-          "query" => "{SQL}"  // SQL to retrieve linked records
-        ],
-        "table2" => [ ... ]
-      ]
-* `allPlugins`: array of data from plugins (1-n) tables
-      "allPlugins" => [
-        "plugin1" => [
-          "fld1" => "value1",
+        "fields" => [
+          "id" => "Id field",
+          "creator" => "First creator of the record",
           ...
-        ],
-        "plugin2" => [...]
-      ]
+        ]
+* `core`: associative array of field ids (indexes) and their values (values) of the main table
+        "core" => [
+          "id" => 10,
+          "creator" => 7,
+          ...
+        ]
+* `corelinks`: associative array with automatic links data, for all tables
+        "coreLinks" => [
+          "table1" => [         // Name of the linked table
+            "tot" => 10         // Total number of links in table 1
+            "query" => "{SQL}"  // SQL to retrieve linked records
+          ],
+          "table2" => [ ... ]
+        ]
+* `allPlugins`: array of data from plugins (1-n) tables
+        "allPlugins" => [
+          "plugin1" => [
+            "fld1" => "value1",
+            ...
+          ],
+          "plugin2" => [...]
+        ]
 * `fullFiles`: indexed array with list of attached files
-      "fullFiles" => [
-        [
-          "id" => 245
-          "creator" => 7
-          "ext" => "jpg"
-          "keywords" => ""
-          "description" => ""
-          "printable" => ""
-          "filename" => "C0272_MR2004"
-          "linkid" => 323
-        ],
-        [...]
-      ]
+        "fullFiles" => [
+          [
+            "id" => 245
+            "creator" => 7
+            "ext" => "jpg"
+            "keywords" => ""
+            "description" => ""
+            "printable" => ""
+            "filename" => "C0272_MR2004"
+            "linkid" => 323
+          ],
+          [...]
+        ]
 * `geodata`: indexed array with list of attached geodata
-      "geodata" => [
-        [
-          "id" => "",
-          "table_link" => "",
-          "id_link" => "",
-          "geometry" => "",
-          "geo_el_elips" => "",
-          "geo_el_asl" => ""
-        ],
-        [...]
-      ]
+        "geodata" => [
+          [
+            "id" => "",
+            "table_link" => "",
+            "id_link" => "",
+            "geometry" => "",
+            "geo_el_elips" => "",
+            "geo_el_asl" => ""
+          ],
+          [...]
+        ]
 * `userlinks`: indexed array with links entered manually
-      "userLinks" => [
-        [
-          "id" => "",
-          "tb" => "",
-          "ref_id" => ""
-        ],
-        [...]
-      ]
+        "userLinks" => [
+          [
+            "id" => "",
+            "tb" => "",
+            "ref_id" => ""
+          ],
+          [...]
+        ]
 * `rs`: indexed array with stratigraphic relationship      
-      "rs" => [
-        [
-          "id" => "",
-          "tb" => "",
-          "first" => "",
-          "second" => "",
-          "relation" => ""
-        ],
-        [ ... ]
-      ]
+        "rs" => [
+          [
+            "id" => "",
+            "tb" => "",
+            "first" => "",
+            "second" => "",
+            "relation" => ""
+          ],
+          [ ... ]
+        ]
 
 ### List of records
 
