@@ -4,7 +4,7 @@ Two open source clients, written in PHP and in Javascript to interact with a [Br
 
 * [PHP Version](#usage-of-the-php-version)
 * [JavaScript version](#usage-of-the-javascript-version)
-* [BraDypUS data structure](#braDypUS-data-structure)
+* [BraDypUS data structure](#bradypus-data-structure)
 * [MIT license](mit-license)
 
 ---
@@ -133,18 +133,23 @@ The API returns arrays of two different types, one for the single record and one
 The single record structure is returned only by the `getOne` method. The main array is composed by:
 
 * `fields`: associative array of field ids (indexes) and field labels (values), eg:
+
         "fields" => [
           "id" => "Id field",
           "creator" => "First creator of the record",
           ...
         ]
+
 * `core`: associative array of field ids (indexes) and their values (values) of the main table
+
         "core" => [
           "id" => 10,
           "creator" => 7,
           ...
         ]
+
 * `corelinks`: associative array with automatic links data, for all tables
+
         "coreLinks" => [
           "table1" => [         // Name of the linked table
             "tot" => 10         // Total number of links in table 1
@@ -152,7 +157,9 @@ The single record structure is returned only by the `getOne` method. The main ar
           ],
           "table2" => [ ... ]
         ]
+
 * `allPlugins`: array of data from plugins (1-n) tables
+
         "allPlugins" => [
           "plugin1" => [
             "fld1" => "value1",
@@ -160,7 +167,9 @@ The single record structure is returned only by the `getOne` method. The main ar
           ],
           "plugin2" => [...]
         ]
+
 * `fullFiles`: indexed array with list of attached files
+
         "fullFiles" => [
           [
             "id" => 245
@@ -174,7 +183,9 @@ The single record structure is returned only by the `getOne` method. The main ar
           ],
           [...]
         ]
+
 * `geodata`: indexed array with list of attached geodata
+
         "geodata" => [
           [
             "id" => "",
@@ -186,7 +197,9 @@ The single record structure is returned only by the `getOne` method. The main ar
           ],
           [...]
         ]
+
 * `userlinks`: indexed array with links entered manually
+
         "userLinks" => [
           [
             "id" => "",
@@ -195,7 +208,9 @@ The single record structure is returned only by the `getOne` method. The main ar
           ],
           [...]
         ]
+
 * `rs`: indexed array with stratigraphic relationship      
+
         "rs" => [
           [
             "id" => "",
