@@ -5,7 +5,9 @@ Two open source clients, written in PHP and in Javascript to interact with a [Br
 * [PHP Version](#usage-of-the-php-version)
 * [JavaScript version](#usage-of-the-javascript-version)
 * [BraDypUS data structure](#bradypus-data-structure)
-* [MIT license](mit-license)
+* * [Single record structure](#single-record)
+* * [List of records structure](#list-of-records)
+* [MIT license](#mit-license)
 
 ---
 
