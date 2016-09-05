@@ -2,7 +2,6 @@ function bdusApiClient(opts){
 
   var apiUrl = opts.url,
       app = opts.app,
-      paginate = opts.paginate,
       $this = this,
       records_per_page;
 
