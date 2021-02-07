@@ -1,0 +1,16 @@
+{
+    "name": "bdus-db/bdus-api-php-client",
+    "version": "1.0.0",
+    "type": "library",
+    "description": "A simple to use PHP client for Bradypus API",
+    "keywords": ["rbdms","bdus","api","php"],
+    "homepage": "https://github.com/bdus-db/BdusApiPhpClient",
+    "license": "ISC",
+    "authors": [
+        {
+            "name": "Julian Bogdani",
+            "email": "jbogdani@gmail.com",
+            "role": "Developer"
+        }
+    ]
+}
