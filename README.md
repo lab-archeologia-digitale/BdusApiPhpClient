@@ -7,7 +7,7 @@ This library is aony a thin wrapper arount the BraDypUS API, wich is fully docum
 A full example on how to use this library can be found in [test/test-BdusApiPhpClient.php](test/test-BdusApiPhpClient.php) file.
 
 ## ToC
-- [Include the library](#include-the-library)
+- [Install and setup](#install-and-setup)
 - [Initialize the class](#initialize-the-class)
 - [Get API (BradypUS) version](#get-api-bradypus-version)
 - [Get Unique values for a column](#get-unique-values-for-a-column)
@@ -25,11 +25,29 @@ A full example on how to use this library can be found in [test/test-BdusApiPhpC
 
 ## Usage
 
+### Install and setup
+BdusApiPhoClient can be installed via Composer or manually.
+Via Composer, require and download the library
 
-### Include the library
+```bash
+composer require bdus-db/bdus-api-php-client
+```
+And then load it via Autoloader:
 
 ```php
-  require './BdusApiPhpClient.php';
+<?php
+require_once 'vendor/autoload.php';
+
+use BdusApiPhpClient\BdusApiPhpClient;
+```
+
+For manual instalation, download the library and require it:
+
+
+```php
+<?php
+require_once 'BdusApiPhpClient/src/BdusApiPhpClient.php';
+use BdusApiPhpClient\BdusApiPhpClient;
 ```
 
 ### Initialize the class

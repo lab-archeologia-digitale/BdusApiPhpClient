@@ -12,5 +12,14 @@
             "email": "jbogdani@gmail.com",
             "role": "Developer"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-4": {
+            "BdusApiPhpClient\\": "src/",
+            "TestBdusApiPhpClient\\": "test/"
+        }
+    },
+    "require": {
+        "php": "7.1.0"
+    }
 }

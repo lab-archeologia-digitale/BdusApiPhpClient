@@ -6,6 +6,7 @@
  * @copyright		Julian Bogdani, 2007-2021
  * @license			AGPL-3.0
  */
+namespace BdusApiPhpClient;
 
 class BdusApiPhpClient
 {
