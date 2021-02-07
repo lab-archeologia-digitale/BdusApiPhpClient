@@ -84,7 +84,7 @@ Returns
   'Tapa Sardar, Upper Terrace',
   'Tapa Sardar, II terrace',
   'Tapa Sardar, Area 64-100',
-  ...,
+  ...
 ]
 ```
 
@@ -240,9 +240,8 @@ Returns
   ],
   'm_biblio' => [
     ...
-  ],
-)
-)
+  ]
+]
 ```
 
 ### Inspect single table configuration
@@ -259,8 +258,11 @@ Returns
   'order' => 'inv_no',
   'id_field' => 'inv_no',
   'preview' => [
-    0 => 'inv_no',
+    'inv_no',
     ...
+  ]
+  ...
+]
 ```
 
 ### Search by providing an array
@@ -317,7 +319,9 @@ Returns
       'id' => '678',
       'creator' => '11',
       ...
-)
+    ]
+  ]
+]
 ```
 
 ### Search by providing an array and pagination
@@ -354,6 +358,10 @@ Returns
     'stripped_table' => 'finds',
     'table_label' => 'Finds',
     'page' => 2,
+    ...
+  ]
+  ...
+]
 ```
 
 ### Search by providing ShortSQL
@@ -453,5 +461,5 @@ Result:
   ],
   'geodata' =>  [ ],
   'rs' =>  [ ],
-)
+]
 ```
