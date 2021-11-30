@@ -2,11 +2,11 @@
 
 An open source client, written in PHP, to interact with a [BraDypUS](https://github.com/jbogdani/BraDypUS) API database.
 
-This library is aony a thin wrapper arount the BraDypUS API, wich is fully documented at [docs.bdus.cloud/api/](https://docs.bdus.cloud/api/).
+This library is just a thin wrapper arount the BraDypUS API, wich is fully documented at [docs.bdus.cloud/api/](https://docs.bdus.cloud/api/).
 
-A full example on how to use this library can be found in [test/test-BdusApiPhpClient.php](test/test-BdusApiPhpClient.php) file.
+A full example on how to use this library can be found in the test folder of this repository.
 
-## ToC
+## Table of Contents
 - [Install and setup](#install-and-setup)
 - [Initialize the class](#initialize-the-class)
 - [Get API (BradypUS) version](#get-api-bradypus-version)
